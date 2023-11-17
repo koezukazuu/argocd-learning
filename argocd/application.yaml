@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-learning
+  namespace: argocd
+spec:
+  project: argocd-learning
+  source:
+    # 自分のgithubの作成したレポジトリを指定
+    repoURL: https://github.com/fukushimaf929/argocd-learning.git 
+    path: kubernetes
+    targetRevision: main
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd-learning
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
