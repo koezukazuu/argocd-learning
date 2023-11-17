@@ -7,7 +7,7 @@ spec:
   project: argocd-learning
   source:
     # 自分のgithubの作成したレポジトリを指定
-    repoURL: https://github.com/fukushimaf929/argocd-learning.git 
+    repoURL: https://github.com/koezukazuu/argocd-learning.git 
     path: kubernetes
     targetRevision: main
   destination:
